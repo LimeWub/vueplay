@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import HelloWorld from '@/components/HelloWorld/Index';
-import Lime from '@/components/Lime/Index';
+import HelloWorld from '@/components/HelloWorld';
+import Lime from '@/components/Lime';
 
 Vue.use(Router);
 
