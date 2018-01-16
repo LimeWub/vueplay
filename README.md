@@ -1,4 +1,4 @@
-# vue
+# vueplay
 
 > A Vue.js project
 

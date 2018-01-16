@@ -2,9 +2,9 @@
   <div class="lime">
 	  <h1 v-bind:title="hover"> {{ title }} </h1>
 	  <p> {{ introduction }} </p>
-	  
+
 	  <div id="component1">
-		  
+
 		<button v-on:click="doStuff">Do stuff</button>
 		<p id="jsStuff" v-if="stuffDone"> Stuff done </p>
 
@@ -17,39 +17,39 @@
 	  </div>
 	  <div id="component3"> </div>
 	  <div id="component4"> </div>
-	  
+
   </div>
 </template>
 
 <script>
 export default {
-	name: 'Lime',
-	data() {
+  name: 'Lime',
+  data() {
 	  return {
-		title: "Lime's little playground page :)",
-		hover: "Hover Hover!",
-		introduction: "Learn all da vues!",
+      title: "Lime's little playground page :)",
+      hover: 'Hover Hover!',
+      introduction: 'Learn all da vues!',
 
-		stuffDone: false,
-		listItems: [
-			{text: "Item One"},
-			{text: "Item Two"},
-			{text: "Item Three"},
-			{text: "Item Four"},
-			{text: "Item Five"}
-		],
-		
-		inputStr: ''
+      stuffDone: false,
+      listItems: [
+        { text: 'Item One' },
+        { text: 'Item Two' },
+        { text: 'Item Three' },
+        { text: 'Item Four' },
+        { text: 'Item Five' },
+      ],
+
+      inputStr: '',
 	  };
-	},
-	methods: {
-		doStuff: function () {
-			this.stuffDone = (this.stuffDone?false:true);
-		},
-		aestheticString: function (str) {
-			return str.toUpperCase().replace(/\s/g,'').split('').join(' ');
-		  }
-	}
+  },
+  methods: {
+    doStuff() {
+      this.stuffDone = (!this.stuffDone);
+    },
+    aestheticString(str) {
+      return str.toUpperCase().replace(/\s/g, '').split('').join(' ');
+		  },
+  },
 };
 </script>
 
