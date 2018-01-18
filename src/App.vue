@@ -1,6 +1,6 @@
 <template>
   <v-app >
-    <v-navigation-drawer fixed  v-model="siteNav">
+    <v-navigation-drawer fixed v-model="siteNav">
       <v-list class="pt-0">
         <v-list-tile @click="">
           <v-list-tile-action>
@@ -13,13 +13,13 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-toolbar>
+    <v-toolbar dark class="grey darken-2">
+      <v-toolbar-side-icon class="hidden-sm-and-up" @click="siteNav = !siteNav"></v-toolbar-side-icon>
       <v-toolbar-title> 
         Hello Vue
       </v-toolbar-title>
-      <v-toolbar-side-icon @click="siteNav = !siteNav"></v-toolbar-side-icon>
       <v-spacer> </v-spacer>
-      <v-toolbar-items>
+      <v-toolbar-items class="hidden-xs-only">
         <v-btn flat><v-icon left>code</v-icon> Link 1 </v-btn>
       </v-toolbar-items>
     </v-toolbar>

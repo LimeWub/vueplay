@@ -1,5 +1,5 @@
 <template>
-  <div class="lime">
+  <div class="lime-block">
 	  <h1 v-bind:title="hover"> {{ title }} </h1>
 	  <p> {{ introduction }} </p>
 
