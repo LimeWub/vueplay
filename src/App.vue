@@ -1,18 +1,17 @@
 <template>
   <v-app >
-    <v-navigation-drawer fixed v-model="siteNav">
-      <v-list>
-        <v-list-tile>
+    <v-navigation-drawer fixed  v-model="siteNav">
+      <v-list class="pt-0">
+        <v-list-tile @click="">
           <v-list-tile-action>
             <v-icon>code</v-icon> 
           </v-list-tile-action>
           <v-list-tile-content> 
-            <v-list-tile-title> Link 1</v-list-tile-title>
+            <v-list-tile-title>Link 1</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-
 
     <v-toolbar>
       <v-toolbar-title> 
@@ -35,7 +34,11 @@ export default {
   name: 'App',
   data () {
     return {
-      siteNav: false
+      siteNav: false,
+      items: [
+          { title: 'Home', icon: 'dashboard' },
+          { title: 'About', icon: 'question_answer' }
+        ]
     }
   }
 };
