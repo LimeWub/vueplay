@@ -16,7 +16,7 @@
     <v-toolbar dark class="grey darken-2">
       <v-toolbar-side-icon class="hidden-sm-and-up" @click="siteNav = !siteNav"></v-toolbar-side-icon>
       <v-toolbar-title> 
-        <router-link to="/"> Vue </router-link>
+        <router-link to="/">Vue </router-link>
       </v-toolbar-title>
       <v-spacer> </v-spacer>
       <v-toolbar-items class="hidden-xs-only">
@@ -24,7 +24,9 @@
       </v-toolbar-items>
     </v-toolbar>
     <main>
-       <router-view/>
+      <v-content>
+        <router-view/>
+      </v-content>
     </main> 
   </v-app>
 </template>
