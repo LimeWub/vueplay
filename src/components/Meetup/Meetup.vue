@@ -4,13 +4,13 @@
             <v-flex xs-12>
                 <v-card>
                     <v-card-title>
-                        <h1 class="primary--text"></h1>
+                        <h1 class="primary--text">{{ meetup.title }} </h1>
                     </v-card-title>
-                    <v-card-media src="https://cdn.cnn.com/cnnnext/dam/assets/170606110126-tokyo-skyline.jpg"
+                    <v-card-media :src="meetup.imageUrl"
                       height="400px">
                     </v-card-media>
                     <v-card-text>
-                        <div class="info--text">Date / Place</div>
+                        <div class="info--text">{{ meetup.date }}</div>
                         <div>Dummy text</div>
                     </v-card-text>
                     <v-card-actions>
@@ -22,3 +22,14 @@
         </v-layout>
     </v-contatainer>
 </template>
+
+<script>
+  export default {
+    props: ['id'],
+    computed: {
+      meetup () {
+        return this.$store.getters.loadedMeetup(this.id);
+      }
+    }
+  }
+</script>
