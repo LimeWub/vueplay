@@ -2,6 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
 import App from './App';
+import * as firebase from 'firebase';
 import router from './router';
 import Vuetify from 'vuetify';
 import { store } from './store';
@@ -20,4 +21,13 @@ new Vue({
   components: { App },
   store,
   template: '<App/>',
+  created () {
+    firebase.initializeApp({
+      apiKey: "AIzaSyBkUJJuojQoz_-ufHUyN2Gw9sWP0mzCTSI",
+      authDomain: "vueplay-b4361.firebaseapp.com",
+      databaseURL: "https://vueplay-b4361.firebaseio.com",
+      projectId: "vueplay-b4361",
+      storageBucket: "vueplay-b4361.appspot.com"
+    });
+  }
 });
