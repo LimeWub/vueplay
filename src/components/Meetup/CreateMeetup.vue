@@ -34,10 +34,22 @@
             </v-flex>
           </v-layout>
 
-
           <v-layout row="">
             <v-flex xs12="" sm6="">
               <v-text-field name="description" label="Description" id="description" required="required" multi-line="" v-model="description"></v-text-field>
+            </v-flex>
+          </v-layout>
+
+           <v-layout row="">
+            <v-flex xs12="" sm6="">
+              <h4>Change date and time</h4>
+              <v-date-picker name="date" label="Date" id="date" required="required" v-model="date"></v-date-picker>
+            </v-flex>
+          </v-layout>
+
+          <v-layout row="">
+            <v-flex xs12="" sm6="">
+              <v-time-picker name="time" label="Time" id="time" required="required" v-model="time" format="24hr"></v-time-picker>
             </v-flex>
           </v-layout>
 
@@ -61,12 +73,24 @@ export default {
       title: '',
       location: '',
       imageUrl: '',
-      description: ''
+      description: '',
+      date: new Date().toISOString(),
+      time: new Date()
     }
   },
   computed: {
     formIsValid () {
       return this.title !== '' && this.location !== '' && this.imageUrl !== '' && this.description !== '';
+    },
+    submittableDateTime () {
+      const date = new Date(this.date);
+      if (typeof this.time === 'string') {
+        const hours = this.time.match(/(\d+)/g)[0];
+        const mins = this.time.match(/(\d+)/g)[1];
+        date.setHours(hours);
+        date.setMinutes(mins);
+      }
+      return date;
     }
   },
   methods: {
@@ -79,7 +103,7 @@ export default {
         location: this.location,
         imageUrl: this.imageUrl,
         description: this.description,
-        date: new Date()
+        date: this.submittableDateTime
       };
       this.$store.dispatch('createMeetup', meetupData);
       this.$router.push('/meetups');

@@ -5,11 +5,13 @@ import App from './App';
 import router from './router';
 import Vuetify from 'vuetify';
 import { store } from './store';
+import DateFilter from './filters/date'
  
 Vue.use(Vuetify);
 import('../node_modules/vuetify/dist/vuetify.min.css');
 
 Vue.config.productionTip = false;
+Vue.filter('date', DateFilter);
 
 /* eslint-disable no-new */
 new Vue({

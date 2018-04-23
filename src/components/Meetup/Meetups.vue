@@ -14,7 +14,7 @@
               <v-flex>
                 <v-card-title primary-title>
                   <h1 class="headline white--text">{{ meetup.title }}</h1>
-                  <div>{{ meetup.date }}</div>
+                  <div>{{ meetup.date | date }}</div>
                 </v-card-title>
                 <v-card-actions>
                   <v-btn flat :to="'/meetups/' + meetup.id">
