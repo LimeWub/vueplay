@@ -29,5 +29,17 @@ new Vue({
       projectId: "vueplay-b4361",
       storageBucket: "vueplay-b4361.appspot.com"
     });
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
+        // User is signed in.
+        const userData = {
+          id: user.uid,
+          registeredMeetups: []
+        }
+//        store.dispatch('setUser', userData);
+      } else {
+        console.log('No user is signed in.');
+      }
+    })
   }
 });
