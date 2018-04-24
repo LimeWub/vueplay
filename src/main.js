@@ -7,12 +7,14 @@ import router from './router';
 import Vuetify from 'vuetify';
 import { store } from './store';
 import DateFilter from './filters/date'
+import AlertCmp from './components/Shared/Alert.vue'
  
 Vue.use(Vuetify);
 import('../node_modules/vuetify/dist/vuetify.min.css');
 
 Vue.config.productionTip = false;
 Vue.filter('date', DateFilter);
+Vue.component('app-alert', AlertCmp);
 
 /* eslint-disable no-new */
 new Vue({
@@ -36,7 +38,7 @@ new Vue({
           id: user.uid,
           registeredMeetups: []
         }
-        store.dispatch('setUser', userData);
+//        store.dispatch('setUser', userData);
       } else {
         console.log('No user is signed in.');
       }
