@@ -54,13 +54,11 @@ export default {
       return this.password !== this.confirmPassword ? 'Passwords do not match' : true;
     },
     user () { 
-      console.log(this.$store.getters.user);
       return this.$store.getters.user;
     }
   },
   watch: {
     user (value) {
-      console.log(value);
       if (value !== null && value !== undefined){
         this.$router.push('/');
       }

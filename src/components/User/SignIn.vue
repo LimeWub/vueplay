@@ -1,4 +1,4 @@
-<<template>
+<template>
   <v-container>
     <v-flex xs12 sm6>
       <v-card>
@@ -43,12 +43,11 @@ export default {
   },
   computed: {
     user () { 
-      this.$store.getters.user;
+      return this.$store.getters.user;
     }
   },
   watch: {
-    user: (value) => {
-      console.log(value);
+    user (value) {
       if (value !== null && value !== undefined){
         this.$router.push('/');
       }
