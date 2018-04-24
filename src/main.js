@@ -38,10 +38,11 @@ new Vue({
           id: user.uid,
           registeredMeetups: []
         }
-//        store.dispatch('setUser', userData);
+        store.dispatch('setUser', userData);
       } else {
         console.log('No user is signed in.');
       }
-    })
+    });
+    this.$store.dispatch('loadMeetups');
   }
 });
