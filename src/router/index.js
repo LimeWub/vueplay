@@ -8,6 +8,7 @@ import Meetup from '@/components/Meetup/Meetup';
 import Profile from '@/components/User/Profile';
 import SignUp from '@/components/User/SignUp';
 import SignIn from '@/components/User/SignIn';
+import AuthGuard from './auth-guard'
 
 import Lime from '@/components/Lime';
 
@@ -24,6 +25,7 @@ export default new Router({
       path: '/meetups',
       name: 'Meetups',
       component: Meetups,
+      beforeEnter: AuthGuard
     },
     {
       path: '/meetups/new',
@@ -40,6 +42,7 @@ export default new Router({
       path: '/profile',
       name: 'Profile',
       component: Profile,
+      beforeEnter: AuthGuard
     },
     {
       path: '/signup',

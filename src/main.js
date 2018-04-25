@@ -34,11 +34,7 @@ new Vue({
     firebase.auth().onAuthStateChanged(function (user) {
       if (user) {
         // User is signed in.
-        const userData = {
-          id: user.uid,
-          registeredMeetups: []
-        }
-        store.dispatch('setUser', userData);
+        store.dispatch('autoSignIn', user);
       } else {
         console.log('No user is signed in.');
       }
