@@ -29,7 +29,7 @@ new Vue({
       authDomain: "vueplay-b4361.firebaseapp.com",
       databaseURL: "https://vueplay-b4361.firebaseio.com",
       projectId: "vueplay-b4361",
-      storageBucket: "vueplay-b4361.appspot.com"
+      storageBucket: "gs://vueplay-b4361.appspot.com"
     });
     firebase.auth().onAuthStateChanged(function (user) {
       if (user) {
